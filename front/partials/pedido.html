@@ -1,0 +1,104 @@
+<div class="jumbotron">
+	<h1 class="text-center">Pedido</h1>
+</div>
+
+<p ng-show="mensagem.length" class="alert alert-info">{{mensagem}}</p>
+
+<form novalidate name="formulario" class="form-inline" ng-submit="submeter()">
+
+		
+	<div class="form-group">
+		<label for="data-pedido">Cliente</label>
+		<select class="form-control" ng-model="pedido.idCliente" ng-change="buscaCliente(pedido)">
+			<option ng-repeat="customer in customers" value="{{customer._id}}">{{customer.nome}}</option>
+		</select>
+	</div>
+	<div class="form-group">
+		<label for="data-pedido">Data do Pedido</label>
+		<input type="text" class="form-control" id="data-pedido" placeholder="Data do Pedido" ng-model="pedido.dataPedido" ui-date-mask="DD/MM/YYYY">
+	</div>
+
+	<div>
+		<button type="button" class="btn btn-default" ng-click="adicionaItem()">
+		  	<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+		</button>
+	</div>
+
+	<table>
+		<thead>
+			<tr>
+				<th>
+					<label>Item</label>
+				</th>
+				<th>
+					<label>Valor Unitário</label>
+				</th>
+				<th>
+					<label>Quantidade</label>
+				</th>
+				<th>
+					<label>Valor Total</label>
+				</th>
+				<th>
+					<label>Rent.</label>
+				</th>
+			</tr>
+		</thead>
+
+		<tbody>
+			<tr ng-repeat="itemPed in pedido.itens">
+
+				<td>
+					<div class="form-group">
+						<select class="form-control" ng-model="itemPed.idItem" ng-change="buscaItem(itemPed)">
+							<option ng-repeat="item in items" value="{{item._id}}">{{item.nome}}</option>
+						</select>
+					</div>
+				</td>
+				<td>
+					<div class="form-group">
+						<input type="text" class="form-control" id="valor-unitario-item" ng-model="itemPed.valorUnitario" ng-blur="atualizaValorItem(itemPed)" ui-money-mask>
+					</div>
+				</td>
+				<td>
+					<div class="form-group">
+						<input type="number" class="form-control" id="quantidade-item" placeholder="Quantidade" ng-model="itemPed.quantidade" ng-blur="atualizaValorItem(itemPed)" min="1">
+					</div>
+				</td>
+				<td>
+					<div class="form-group">
+						<input type="text" class="form-control" id="valor-total-item" ng-model="itemPed.valorTotal" readonly ui-money-mask>
+					</div>
+				</td>
+				<td>
+					<span ng-class="itemPed.rentabilidade">Rent.</span>
+				</td>
+				<td>
+					<button type="button" class="btn btn-default" ng-click="removerItem(itemPed._id)">
+						<span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span>
+					</button>
+				</td>
+			</tr>
+
+			<tr>
+				<td></td>
+				<td></td>
+				<td><span>Valor Total</span></td>
+				<td>
+					<div class="form-group">
+						<input type="text" class="form-control" id="valor-total-pedido" ng-model="pedido.valor" readonly ui-money-mask>
+					</div>					
+				</td>
+				<td></td>
+			</tr>
+		</tbody>
+	</table>
+
+	<div>
+		<button type="submit" class="btn btn-primary">
+			Salvar
+		</button>
+		<a href="/#/fotos" class="btn btn-primary">Voltar</a>
+	</div>
+		
+</form>

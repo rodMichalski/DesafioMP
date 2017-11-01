@@ -1,0 +1,24 @@
+{
+  "name": "desafiomeuspedidos",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Rodrigo Michalski",
+  "license": "ISC",
+  "dependencies": {
+    "angucomplete-alt": "^3.0.0",
+    "angular-auto-complete": "^1.4.3",
+    "angular-i18n": "^1.6.6",
+    "angular-input-masks": "^4.1.0",
+    "body-parser": "^1.14.1",
+    "consign": "^0.1.2",
+    "express": "^4.13.3",
+    "mongoose": "^4.9.8",
+    "mongoose-auto-increment": "^5.0.1",
+    "mpromise": "^0.5.5"
+  }
+}
