@@ -1,0 +1,30 @@
+<div class="row">
+ 	<div class="">
+		<table class="table table-hover">
+			<thead>
+				<tr>
+					<th>Data</th>
+					<th>Cliente</th>
+					<th>Valor</th>
+					<th>Editar</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="pedido in pedidos">
+					<td>
+						{{pedido.dataPedido | date: 'dd/MM/yyyy'}}
+					</td>
+					<td>
+						{{pedido.cliente.nome}}
+					</td>
+					<td>
+						{{pedido.valor | currency: 'R$'}}
+					</td>
+					<td>	
+						<a class="" href="/#/pedido/edit/{{pedido._id}}">Editar</a>
+					</td>
+				</tr>
+		    </tbody>
+		</table>
+	</div>
+</div>

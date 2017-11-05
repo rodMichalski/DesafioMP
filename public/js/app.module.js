@@ -1,0 +1,1 @@
+angular.module("mpedidos", ['myDirectives','ngAnimate', 'ngRoute', 'ngResource', 'myServices', 'ui.utils.masks', 'mgcrea.ngStrap']);

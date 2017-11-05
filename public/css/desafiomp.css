@@ -1,0 +1,76 @@
+.rent-great{
+  background-color: green;
+  color: green;
+}
+
+.rent-good{
+  background-color: yellow;
+  color: yellow;
+}
+
+.rent-bad{
+  background-color: red;
+  color: red;
+}
+
+.rent-clear{
+  color: white;
+}
+
+.col-item {
+	width: 100%;
+	min-width: 150px;
+}
+
+.col-quant {
+	width: 100%;
+}
+
+.col-valor {
+	width: 100%;
+	min-width: 100px;
+}
+
+.col-rent {
+	width: 50%;
+	min-width: 30px;
+}
+
+.field-item{
+	width: 100%;
+}
+
+.field-val-unit{
+	width: 100%;
+}
+
+.field-quant{
+	width: 100%;
+}
+
+.field-val-total{
+	width: 100%;
+	border: none;
+}
+
+.field-rent{
+	width: 100%;
+	border: none;
+}
+
+.field-data-pedido{
+	max-width: 150px;
+}
+
+.but-save{
+	position: absolute;
+	right: 0%;
+}
+
+#cliente-pedido{
+	width: 300px;
+}
+
+#item-pedido{
+	width: 300px;
+}

@@ -1,0 +1,108 @@
+<div class="jumbotron">
+	<h1 class="text-center">Pedido</h1>
+</div>
+
+<p ng-show="mensagem.length" class="alert alert-info">{{mensagem}}</p>
+
+<form novalidate name="formulario" class="form-inline" ng-submit="submeter()">
+
+	<div class="form-group">
+		<label for="data-pedido">Cliente</label>
+		<input type="text" class="form-control" ng-model="pedido.cliente" bs-options="customer.nome for customer in customers" placeholder="Cliente" bs-typeahead>
+	</div>
+	<div class="form-group">
+		<label for="data-pedido">Data do Pedido</label>
+		<input type="text" class="form-control field-data-pedido" id="data-pedido" name="dataPedido" placeholder="Data do Pedido" ng-model="pedido.dataPedido" ui-date-mask="DD/MM/YYYY" bs-datepicker>
+	</div>
+
+	<div class="">
+		<button type="button" class="btn btn-default" ng-click="adicionaItem()">
+		  	<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+		</button>
+	</div>
+
+	<div class="table-responsive">
+		<table class="table table-hover">
+			<thead>
+				<tr class="row">
+					<th class="col-xs-5">
+						<label>Item</label>
+					</th>
+					<th class="col-xs-2">
+						<label>Valor Unitário</label>
+					</th>
+					<th class="col-xs-1">
+						<label>Quant</label>
+					</th>
+					<th class="col-xs-2">
+						<label>Valor Total</label>
+					</th>
+					<th class="col-xs-1">
+						<label>Rent.</label>
+					</th>
+					<th class="col-xs-1">
+					</th>
+				</tr>
+			</thead>
+
+			<tbody>
+				<tr class="row" ng-repeat="itemPed in pedido.itens">
+
+					<td class="col-xs-5" >
+						<div class="input-group input-group-sm col-item">
+							<input type="text" class="form-control" ng-model="itemPed.item" bs-options="item.nome for item in items" placeholder="Item" bs-typeahead ng-change="buscaItem(itemPed)">
+						</div>
+					</td>
+					<td class="col-xs-2">
+						<div class="input-group input-group-sm col-valor">
+							<input type="text" class="form-control field-val-unit" ng-model="itemPed.valorUnitario" ng-blur="atualizaValorItem(itemPed)" min="0.01" ui-money-mask>
+						</div>
+					</td>
+					<td class="col-xs-1">
+						<div class="input-group input-group-sm col-quant">
+							<input type="number" class="form-control field-quant" ng-model="itemPed.quantidade" ng-blur="atualizaValorItem(itemPed)" min="1" size="3">
+						</div>
+					</td>
+					<td class="col-xs-2">
+						<div class="input-group input-group-sm col-valor">
+							<input type="text" class="form-control field-val-total" 
+							ng-model="itemPed.valorTotal" readonly ui-money-mask>
+						</div>
+					</td>
+					<td class="col-xs-1">
+						<div class="input-group input-group-sm col-rent">
+							<input type="text" class="field-rent" readonly ng-class="itemPed.rentabilidade">
+						</div>
+					</td>
+					<td class="col-xs-1">
+						<button type="button" class="btn btn-default btn-sm" ng-click="removerItem(itemPed._id)">
+							<span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span>
+						</button>
+					</td>
+				</tr>
+
+				<tr class="row">
+					<td class="col-xs-5"></td>
+					<td class="col-xs-2"><h4>Valor Total</h4></td>
+					<td class="text-right col-xs-1"></td>
+					<td>
+						<div class="input-group input-group-sm col-valor">
+							<input type="text" class="form-control field-val-total" id="valor-total-pedido" ng-model="pedido.valor" readonly ui-money-mask>
+						</div>					
+					</td>
+					<td></td>
+					<td></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+	
+	<div class="col-xs-12 ">
+		<a href="/#/fotos" class="btn btn-danger">Voltar</a>
+		<button type="submit" class="btn btn-primary but-save">
+			Salvar
+		</button>
+	</div>
+		
+</form>

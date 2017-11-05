@@ -3,10 +3,10 @@ var app = express();
 var consign = require('consign');
 var bodyParser = require('body-parser');
 
-app.use(express.static('./front'));
+app.use(express.static('./public'));
 app.use(bodyParser.json());
 
-consign({cwd: 'back'})
+consign({cwd: 'app'})
 	.include('models')
 	.then('api')
 	.then('routes')
