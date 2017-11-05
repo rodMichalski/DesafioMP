@@ -127,7 +127,7 @@ angular.module('mpedidos')
 				$scope.mensagem = "Cliente não informado.";
 			}		
 
-			if ($scope.formulario.dataPedido.$invalid){
+			if ($scope.formulario.dataPedido.$invalid || !$scope.pedido.dataPedido){
 				$scope.mensagem = "Data Inválida.";
 			}			
 

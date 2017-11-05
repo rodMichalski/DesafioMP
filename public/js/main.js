@@ -1,9 +1,7 @@
 angular.module('mpedidos')
-	.config(function($routeProvider, $locationProvider, $httpProvider) {
+	.config(function($routeProvider, $locationProvider) {
 
-
-		//$httpProvider.interceptors.push('tokenInterceptor');
-	
+		$locationProvider.hashPrefix('');	
 
 		$routeProvider.when('/pedidos', {
 			templateUrl: 'partials/pedidos.html',
