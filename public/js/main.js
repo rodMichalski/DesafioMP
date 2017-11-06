@@ -1,5 +1,5 @@
 angular.module('mpedidos')
-	.config(function($routeProvider, $locationProvider) {
+	.config(function($routeProvider, $locationProvider, $typeaheadProvider) {
 
 		$locationProvider.hashPrefix('');	
 

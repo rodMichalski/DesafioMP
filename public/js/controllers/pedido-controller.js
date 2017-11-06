@@ -3,7 +3,6 @@ angular.module('mpedidos')
 
 
 		$scope.pedido = {};
-		$scope.pedido.cliente = {};
 		$scope.pedido.itens   = [];
 		$scope.mensagem = '';
 
@@ -158,5 +157,4 @@ angular.module('mpedidos')
 		}
 
 		$scope.adicionaItem();
-		
 	});

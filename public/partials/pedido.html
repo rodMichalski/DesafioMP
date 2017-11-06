@@ -8,7 +8,7 @@
 
 	<div class="form-group">
 		<label for="data-pedido">Cliente</label>
-		<input type="text" class="form-control" ng-model="pedido.cliente" bs-options="customer.nome for customer in customers" placeholder="Cliente" bs-typeahead>
+		<input type="text" class="form-control" ng-model="pedido.cliente" bs-options="customer.nome for customer in customers" placeholder="Cliente" data-min-length="0" bs-typeahead>
 	</div>
 	<div class="form-group">
 		<label for="data-pedido">Data do Pedido</label>
