@@ -9,7 +9,6 @@
 - Node.js
 
 - Bootstrap 3.3;
-- Npm
 - Jasmine/Karma
 
 ### MongoDB
@@ -32,6 +31,10 @@ Node.js é um interpretador de código JavaScript que funciona do lado do servid
 
 O framework conta com uma série de recursos visuais pré-construídos que permitem inserir em um site ou aplicativo, com facilidade, botões, painéis, tabelas personalizadas, formulários, alertas e muito mais.
 A ferramenta conta também com uma biblioteca de funções javascripts que permitem criar modais, slides, carousels, tabs, popovers e outros elementos com enorme facilidade.
+
+### Jasmine/Karma
+
+Jasmine é um framework para criação de testes unitários baseados em JavasScript. Karma é uma biblioteca que integra o Jasmine com o AngularJs, auxiliando na injeção dos Controllers e Dependências.
 
 ### Instalação
 
